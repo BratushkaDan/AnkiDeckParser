@@ -9,9 +9,9 @@ Parses notes from txt files and converts it to Anki import format.
 - Bold:
   `*text*`, где text - текст, который будет сделан жирным
 - Italic:
-  `*text*`, где text - текст, который будет сделан курсивом
+  `_text_`, где text - текст, который будет сделан курсивом
 - Underline:
-  `*text*`, где text - текст, который будет подчёркнут
+  `__text__`, где text - текст, который будет подчёркнут
   
 ## Формат:
 - Между полем front и back будет **одна пустая строки**.
