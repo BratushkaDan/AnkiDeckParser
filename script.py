@@ -38,7 +38,7 @@ def replace_cloze_deletions(card):
     deletions = re.findall(r"\d+\({2}(?:(?!\)\))(?!\(\().)+\){2}", card['front'], re.MULTILINE)
     for cloze in deletions:
         m = re.match(r"(\d+\({2})((?:(?!\)\))(?!\(\().)+)(\){2})", cloze, re.MULTILINE)
-        card['front'] = card['front'].replace(cloze, '{{c' + m[1][:-2] + '::' + m[2] + '}}')
+        card['front'] = card['front'].replace(cloze, '{{c' + m[1][:-2] + '::' + m[2].strip() + '}}')
     return card
 
 

@@ -3,7 +3,7 @@ Parses notes from txt files and converts it to Anki import format.
 
 ## Возможности
 - Cloze deletion:
-  `d((text))`, где d - целое число, text - текст внутри пропусков
+  `d((text))`, где d - натуральное число, text - текст внутри пропусков
 - Tags:
   `==Name1,Name2, name3`, где Name1, Name2 и name3 - пустая строка и 2 или более '=', затем имена тегов, перечисленные через запятые
 - Bold:
