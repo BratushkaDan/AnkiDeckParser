@@ -56,7 +56,7 @@ def process_cards_from_file(file_name):
 
     cards = []
     blank_lines = 0
-    card = {'front': '', 'back': '', 'tags': ''}
+    card = {'front': '', 'back': '', 'tags': []}
     current = 'front'
 
     for line in f:
@@ -73,16 +73,17 @@ def process_cards_from_file(file_name):
                 card[current] += '<br>'
             elif line.count('==') >= 1:
                 tags = re.findall(r'[^=]*$', line)[0]
-                card['tags'] = ' '.join(tags.split(','))
+                for tag in tags.split(','):
+                    card['tags'].append(tag)
             else:
                 card[current] += line + '<br>'
         elif blank_lines == 2:
             blank_lines = 0
             current = 'front'
             cards.append(card)
-            card = {'front': '', 'back': '', 'tags': ''}
-
-    if not card == cards[-1]:
+            card = {'front': '', 'back': '', 'tags': []}
+    card['tags'] = ' '.join(card['tags'])
+    if len(cards) == 0 or not card == cards[-1]:
         cards.append(card)
     return post_process_cards(cards)
 
