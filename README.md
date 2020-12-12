@@ -1,6 +1,10 @@
 # AnkiDeckParser
 Parses notes from txt files and converts it to Anki import format.
 
+## Использование
+``` python3 script.py file```
+file - полное имя файла, **включая его расширение**.
+
 ## Возможности
 - Cloze deletion:
   `d((text))`, где d - натуральное число, text - текст внутри пропусков
